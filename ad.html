@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="add.css">
+</head>
+<body>
+    <!-- Header with Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Admin Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <!-- Dropdown for Owners -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ownersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Owners
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="ownersDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="showContent('new-owners')">New Owners</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showContent('existing-owners')">Existing Owners</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showContent('blocked-owners')">Blocked Owners</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for Users -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="usersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Users
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="usersDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="showContent('existing-users')">Existing Users</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for Categories -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="showContent('hotels')">Hotels</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showContent('restaurants')">Restaurants</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showContent('lodges')">Lodges</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Logout -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showContent('logout')">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Area -->
+    <div class="container mt-4" id="content-area">
+        <!-- Placeholder Content -->
+        <div id="new-owners" class="content-section" style="display: none;">
+            <h3>New Owners</h3>
+            <p>List of new owners.</p>
+        </div>
+        <div id="existing-owners" class="content-section" style="display: none;">
+            <h3>Existing Owners</h3>
+            <p>Details of existing owners.</p>
+        </div>
+        <div id="blocked-owners" class="content-section" style="display: none;">
+            <h3>Blocked Owners</h3>
+            <p>Details of blocked owners.</p>
+        </div>
+        <div id="existing-users" class="content-section" style="display: none;">
+            <h3>Existing Users</h3>
+            <p>Details of existing users.</p>
+        </div>
+        <div id="hotels" class="content-section" style="display: none;">
+            <h3>Hotels</h3>
+            <p>List of hotels.</p>
+        </div>
+        <div id="restaurants" class="content-section" style="display: none;">
+            <h3>Restaurants</h3>
+            <p>List of restaurants.</p>
+        </div>
+        <div id="lodges" class="content-section" style="display: none;">
+            <h3>Lodges</h3>
+            <p>List of lodges.</p>
+        </div>
+        <div id="logout" class="content-section" style="display: none;">
+            <h3>Logout</h3>
+            <p>You have successfully logged out.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section mt-auto">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <h4>Contact Us</h4>
+                    <p>Email: contact@delishdash.com</p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Address</h4>
+                    <p>123 Food Street, Culinary City, FL 12345</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Delish Dash. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script>
+        // Function to Show Content Based on Selection
+        function showContent(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.style.display = 'none'; // Hide all sections
+            });
+            document.getElementById(sectionId).style.display = 'block'; // Show the selected section
+        }
+    </script>
+</body>
+</html>

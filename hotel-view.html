@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Sunshine - Delish Dash</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="hotel-view.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Delish Dash</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <!-- Hotel Header -->
+    <div class="container hotel-header">
+        <div class="hotel-image-section">
+            <img src="./jw.webp" alt="Hotel Sunshine" class="hotel-img">
+        </div>
+        <h2>JW Marriott</h2>
+        <p class="tagline">Experience luxury like never before!</p>
+        <p>Location: Madurai</p>
+    </div>
+
+    <!-- Menu Section -->
+    <div class="container menu-section">
+        <h3>Our Menu</h3>
+        <ul class="menu-list">
+            <li>Grilled Chicken with Veggies - ₹950</li>
+            <li>Spaghetti Carbonara - ₹1,200</li>
+            <li>Classic Caesar Salad - ₹750</li>
+            <li>Double Cheeseburger with Fries - ₹1,100</li>
+            <li>Seasonal Fruit Platter - ₹650</li>
+        </ul>
+        <button class="btn btn-primary btn-lg mt-3" data-toggle="modal" data-target="#reserveTableModal">Reserve Table</button>
+    </div>
+    
+
+    <!-- Room Availability Section -->
+    <div class="container room-section">
+        <h3>Room Availability</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card room-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room</h5>
+                        <p class="card-text">Price: ₹7,500 per night</p>
+                         <div class="btn btn-success">Available</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card room-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Double Room</h5>
+                        <p class="card-text">Price: ₹10,000 per night</p>
+                        <div class="btn btn-warning">Limited Availability</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card room-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Suite</h5>
+                        <p class="card-text">Price: ₹15,000 per night</p>
+                        <div class="btn btn-danger">Fully Booked</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-lg mt-3" data-toggle="modal" data-target="#bookingModal">Book Room</button>
+    </div>
+
+    <!-- Reserve Table Modal -->
+    <div class="modal fade" id="reserveTableModal" tabindex="-1" role="dialog" aria-labelledby="reserveTableModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reserveTableModalLabel">Reserve Table</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Reservation Date</label>
+                            <input type="date" id="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <input type="time" id="time" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <input type="number" id="guests" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Confirm Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Room Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Book Room</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="roomType">Room Type</label>
+                            <select id="roomType" class="form-control" required>
+                                <option value="" disabled selected>Select Room Type</option>
+                                <option value="single">Single Room</option>
+                                <option value="double">Double Room</option>
+                                <option value="suite">Suite</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkin">Check-In Date</label>
+                            <input type="date" id="checkin" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout">Check-Out Date</label>
+                            <input type="date" id="checkout" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <input type="number" id="guests" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <h4>Contact Us</h4>
+                    <p>Email: contact@delishdash.com</p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Address</h4>
+                    <p>123 Food Street, Culinary City, FL 12345</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Delish Dash. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

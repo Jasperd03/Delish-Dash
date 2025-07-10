@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard - Delish Dash</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="manager-dashboard.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Delish Dash</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="container dashboard-content">
+        <h2 class="text-center my-4">Welcome, Manager!</h2>
+
+        <!-- Registered Hotels Section -->
+        <div class="registered-hotels-section">
+            <div class="row">
+                <!-- Example Registered Hotel Card -->
+                <div class="col-md-4">
+                    <div class="card hotel-card" onclick="viewHotelDetails('Hotel Sunshine')">
+                        <img src="jw.webp" alt="Hotel Sunshine" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">JW Marriott</h5>
+                            <p class="card-text">Location: Madurai</p>
+                            <p class="card-text">Type: Hotel</p>
+                            <button class="btn btn-orange btn-sm">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Hotel Card -->
+                <div class="col-md-4">
+                    <div class="card hotel-card add-hotel-card" data-toggle="modal" data-target="#addHotelModal">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">+ Add New</h5>
+                            <p class="card-text">Add a new Hotel/Restaurant/Lodge</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hotel Details Modal -->
+    <div class="modal fade" id="viewHotelModal" tabindex="-1" role="dialog" aria-labelledby="viewHotelModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewHotelModalLabel">Hotel Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Hotel Name: Hotel Sunshine</h5>
+                    <p>Location: New York City</p>
+                    <p>Type: Hotel</p>
+                    <h6>Menu Options:</h6>
+                    <ul>
+                        <li>Grilled Chicken with Veggies - ₹950</li>
+                        <li>Spaghetti Carbonara - ₹1,200</li>
+                        <li>Classic Caesar Salad - ₹750</li>
+                    </ul>
+                    <h6>Room Availability:</h6>
+                    <ul>
+                        <li>Single Room: Available</li>
+                        <li>Double Room: Limited Availability</li>
+                        <li>Suite: Fully Booked</li>
+                    </ul>
+                    <button class="btn btn-orange btn-sm mt-3">Edit Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Hotel Modal -->
+    <div class="modal fade" id="addHotelModal" tabindex="-1" role="dialog" aria-labelledby="addHotelModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addHotelModalLabel">Add Hotel/Restaurant/Lodge</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addHotelForm">
+                        <div class="form-group">
+                            <label for="hotelName">Name</label>
+                            <input type="text" id="hotelName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotelType">Type</label>
+                            <select id="hotelType" class="form-control" required>
+                                <option value="" disabled selected>Select Type</option>
+                                <option value="Hotel">Hotel</option>
+                                <option value="Restaurant">Restaurant</option>
+                                <option value="Lodge">Lodge</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotelLocation">Location</label>
+                            <input type="text" id="hotelLocation" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotelImage">Image</label>
+                            <input type="file" id="hotelImage" class="form-control-file" accept="image/*" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotelDescription">Description</label>
+                            <textarea id="hotelDescription" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-orange btn-block">Add Hotel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <h4>Contact Us</h4>
+                    <p>Email: contact@delishdash.com</p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Address</h4>
+                    <p>123 Food Street, Culinary City, FL 12345</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Delish Dash. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function viewHotelDetails(hotelName) {
+            document.getElementById('viewHotelModalLabel').innerText = hotelName;
+            $('#viewHotelModal').modal('show');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Delish Dash</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* General Styles */
+        body {
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Full screen height */
+        }
+
+        /* Header */
+        .navbar-dark {
+            background-color: #ffffff;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-dark .navbar-brand {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-brand:hover{
+    color: #ff5722;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #757474;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ff5722;
+}
+.navbar-toggler-icon{
+    background: #313131;
+    border-radius: 5px;
+}
+
+        /* Main Content */
+        .content {
+            flex: 1; /* Pushes the footer to the bottom */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-card h2 {
+            margin-bottom: 20px;
+            color: #ff9800;
+        }
+
+        /* Role Selection */
+        .role-selection {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .role-card {
+            flex: 1;
+            background: #f8f8f8;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .role-card.active {
+            background: #ff9800;
+            color: white;
+            border-color: #ff9800;
+        }
+
+        .role-card:hover {
+            background: #f68a33;
+            color: white;
+        }
+
+        .role-card i {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        /* Form */
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .login-btn {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background: #f68a33;
+        }
+
+        .action-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .action-links a {
+            color: #ff9800;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .action-links a:hover {
+            color: #f68a33;
+        }
+
+        /* Footer */
+        .footer-section {
+            background: #333333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer-section h4 {
+            color: #ff9800;
+            margin-bottom: 10px;
+        }
+
+        .footer-section .social-icons a {
+            color: #dddddd;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section .social-icons a:hover {
+            color: #ff9800;
+        }
+        /* Dropdown Styling */
+#role-dropdown {
+    background-color: #FFA500; /* Orange background for the dropdown */
+    color: white; /* White text for the selected option */
+    border: none; /* Remove border */
+    padding: 12px; /* Add padding */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Set font size */
+    font-family: 'Arial', sans-serif; /* Clean font */
+    outline: none; /* Remove focus outline */
+    cursor: pointer; /* Show pointer on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover Effect for the Dropdown */
+#role-dropdown:hover {
+    background-color: #E59400; /* Darker orange for hover effect */
+}
+
+/* Dropdown Options Styling */
+#role-dropdown option {
+    background-color: white; /* White background for the options */
+    color: black; /* Black text for readability */
+    padding: 10px; /* Add padding to options */
+    font-size: 14px; /* Slightly smaller font size for options */
+    font-family: 'Arial', sans-serif; /* Consistent font with the dropdown */
+}
+
+/* Hover Effect for Options */
+#role-dropdown option:hover {
+    background-color: #FFD580; /* Light orange background for hover */
+    color: black; /* Ensure contrast remains good */
+}
+
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Delish Dash</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="login-card">
+            <h2>User Login</h2>
+            <form>
+                
+                <!-- Email input -->
+                <input class="form-control" id="admin_id" type="text" name="email" placeholder="Mail Id" required>
+                
+                <!-- Password input -->
+                <input class="form-control" type="password" name="password" placeholder="Password" required>
+                
+                <!-- Submit button -->
+                <input type="submit" id="loginBtn" name="sub" class="login-btn" value="Login">
+            </form>
+            
+            <div class="action-links" id="actionLinks">
+                <a href="./forgot-password.html">Forgot Password?</a>
+                <a href="./user-register.html" id="signUpLink" >Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <h4>Contact Us</h4>
+                    <p>Email: contact@delishdash.com</p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Address</h4>
+                    <p>123 Food Street, Culinary City, FL 12345</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Delish Dash. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+if utype == "User":
+q = """select id from user_details where email="%s" and password="%s" """ % (Email, Password)
+cur.execute(q)
+res = cur.fetchone()
+if res != None:
+    print(f"""
+    <script>
+    alert("Logged in Successfully")
+    location.href="userdashboard.py?id={res[0]}"
+    </script>
+    """)
+
+else:
+    print("""
+            <script>
+            alert("Incorrect Mail ID or Password")
+            location.href="login.py"
+            </script>
+            """)

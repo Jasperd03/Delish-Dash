@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration - Delish Dash</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* General Styles */
+        body {
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Full screen height */
+        }
+
+        /* Header */
+        .navbar-dark {
+            background-color: #ffffff;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-dark .navbar-brand {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-brand:hover{
+    color: #ff5722;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #757474;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ff5722;
+}
+.navbar-toggler-icon{
+    background: #313131;
+    border-radius: 5px;
+}
+
+        /* Main Content */
+        .content {
+            flex: 1; /* Pushes the footer to the bottom */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .register-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .register-card h2 {
+            color: #ff9800;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .form-group input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .btn-primary {
+            background: #ff9800;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #f68a33;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-link a {
+            color: #ff9800;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .login-link a:hover {
+            color: #f68a33;
+        }
+
+        /* Footer */
+        .footer-section {
+            background: #333333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer-section h4 {
+            color: #ff9800;
+            margin-bottom: 10px;
+        }
+
+        .footer-section .social-icons a {
+            color: #dddddd;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section .social-icons a:hover {
+            color: #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Delish Dash</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="register-card">
+            <h2>User Registration</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+
+                    <label for="email">Email ID</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+
+                    <label for="gender">Gender</label><br>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label><br>
+
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+
+                    <label for="street">Door No & Street</label>
+                    <input class="form-control" id="street" name="street" required>
+
+                    <label for="city">City</label>
+                    <input class="form-control" id="city" name="city" required>
+
+                    <label for="pincode">Pincode</label>
+                    <input type="number" class="form-control" id="pincode" name="pincode" required>
+
+                    <label for="state">State</label>
+                    <input class="form-control" id="state" name="state" required>
+
+                    <label for="mobile">Mobile No.</label>
+                    <input type="number" class="form-control" id="mobile" name="mobile" required>
+
+                    <label for="userid">User ID</label>
+                    <input type="text" class="form-control" id="userid" name="userid" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </form>
+            <div class="login-link">
+                <p>Already have an account? <a href="./login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <h4>Contact Us</h4>
+                    <p>Email: contact@delishdash.com</p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Address</h4>
+                    <p>123 Food Street, Culinary City, FL 12345</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Delish Dash. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

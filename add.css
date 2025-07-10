@@ -1,0 +1,79 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.navbar-dark {
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-dark .navbar-brand {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #757474;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ff5722;
+}
+
+/* Footer */
+.footer-section {
+    background: #333333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.footer-section h4 {
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    color: #dddddd;
+    font-size: 0.9rem;
+}
+
+.footer-section .social-icons a {
+    color: #dddddd;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-section .social-icons a:hover {
+    color: #ff9800;
+}
+
+/* Content Sections */
+.content-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}

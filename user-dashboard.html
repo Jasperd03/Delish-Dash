@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Delish Dash</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="user-dashboard.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Delish Dash</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Section -->
+    <div class="container search-section">
+        <form class="form-inline justify-content-center">
+            <input type="text" class="form-control mb-2 mr-sm-2 search-input" id="location" placeholder="Enter Location" required>
+            <select class="form-control mb-2 mr-sm-2 search-select" id="category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="hotel">Hotel</option>
+                <option value="restaurant">Restaurant</option>
+                <option value="lodge">Lodge</option>
+            </select>
+            <input type="date" class="form-control mb-2 mr-sm-2 search-date" id="date" required>
+            <button type="submit" class="btn btn-primary mb-2 search-btn">Search</button>
+        </form>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="container cards-section">
+        <div class="row">
+            <!-- Card Example -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./jw.webp" class="card-img-top" alt="Hotel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">JW Marriott</h5>
+                        <p class="card-text">Location: Madurai</p>
+                        <a href="./hotel-view.html"><button class="btn btn-primary btn-view">View</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./restaurant.avif" class="card-img-top" alt="Restaurant Image">
+                    <div class="card-body">
+                        <h5 class="card-title">The Gourmet Spot</h5>
+                        <p class="card-text">Location: Coimbatore</p>
+                        <button class="btn btn-primary btn-view">View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/lodge.jpg" class="card-img-top" alt="Lodge Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Mountain Lodge</h5>
+                        <p class="card-text">Location: Ooty</p>
+                        <button class="btn btn-primary btn-view">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./atlantis.jpg" class="card-img-top" alt="Hotel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Atlantis</h5>
+                        <p class="card-text">Location: Chennai</p>
+                        <button class="btn btn-primary btn-view">View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./black berry.jpg" class="card-img-top" alt="Restaurant Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Black Berry</h5>
+                        <p class="card-text">Location: Coimbatore</p>
+                        <button class="btn btn-primary btn-view">View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/lodge1.jpg" class="card-img-top" alt="Lodge Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Crystal Lodge</h5>
+                        <p class="card-text">Location: Chennai</p>
+                        <button class="btn btn-primary btn-view">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <h4>Contact Us</h4>
+                    <p>Email: contact@delishdash.com</p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Address</h4>
+                    <p>123 Food Street, Culinary City, FL 12345</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Delish Dash. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

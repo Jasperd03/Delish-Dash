@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360° Room View</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #viewer {
+            width: 80%;
+            height: 400px;
+            margin-top: 20px;
+        }
+
+        .room-thumbnail {
+            max-width: 200px;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .room-thumbnail:hover {
+            border-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hotel Room 360° Viewer</h1>
+
+    <!-- Room Image Thumbnail -->
+    <img src="./atlantis.jpg" alt="Room Thumbnail" class="room-thumbnail" id="roomThumbnail">
+
+    <!-- 360 Viewer Container -->
+    <div id="viewer" style="display: none;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script>
+        // Get the thumbnail and 360 viewer container
+        const roomThumbnail = document.getElementById('roomThumbnail');
+        const viewerDiv = document.getElementById('viewer');
+
+        // Show the 360-degree viewer on clicking the thumbnail
+        roomThumbnail.addEventListener('click', () => {
+            // Display the viewer container
+            viewerDiv.style.display = 'block';
+
+            // Initialize the Pannellum viewer
+            pannellum.viewer('viewer', {
+                type: 'equirectangular',
+                panorama: 'adobe.jpg', // Path to the 360-degree image
+                autoLoad: true
+            });
+        });
+    </script>
+</body>
+</html>
